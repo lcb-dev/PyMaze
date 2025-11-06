@@ -1,6 +1,7 @@
 import numpy as np
 import math
 from typing import Sequence, Tuple, List
+from tqdm import tqdm
 
 def extract_edges(matrix):
     if not matrix or not matrix[0]:
@@ -40,7 +41,7 @@ def find_entrances_old(bitmap: Sequence[Sequence[int]]) -> List[Tuple[int,int]]:
         if col > 0: yield row, col-1
         if col+1 < img_width: yield row, col+1
 
-    for row in range(img_height):
+    for row in tqdm(range(img_height)):
         for col in range(img_width):
             if not open_mask[row, col] or visited[row, col]:
                 continue
