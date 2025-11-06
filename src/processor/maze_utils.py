@@ -156,3 +156,4 @@ def find_entrances(bitmap: Sequence[Sequence[int]]) -> List[Tuple[int,int]]:
                 best_d = d
                 best_pair = (uniq[i], uniq[j])
     return [best_pair[0], best_pair[1]]
+
