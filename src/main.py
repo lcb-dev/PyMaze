@@ -25,7 +25,7 @@ def main():
     cli_args = parse_args()
     map_image_file = Path(cli_args.img)
     process_image(map_image_file)
-    logger.info("Shutting down.")
+    logger.info("Shutting down.\n\n")
 
 def process_image(imageFile: Path):
     if imageFile.exists():
@@ -34,6 +34,9 @@ def process_image(imageFile: Path):
         print(f"Result size: W={w}, H={h}")
         bitmap_image_file.save("maze_bitmap.bmp")
         logger.info("Image saved. 'maze_bitmap.bmp'")
+
+        entrances = processor.maze_utils.find_entrances(bitmap)
+        print(f"Entrances found: {entrances}")
         
     else:
         logger.error("File not found!")
