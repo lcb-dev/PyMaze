@@ -30,7 +30,11 @@ def main():
 def process_image(imageFile: Path):
     if imageFile.exists():
         logger.info("Image file found!")
-        processor.image_reader.read_image(imageFile)
+        bitmap, (w, h), bitmap_image_file = processor.image_reader.read_image(imageFile, grid_size=(1920, 1920))
+        print(f"Result size: W={w}, H={h}")
+        bitmap_image_file.save("maze_bitmap.bmp")
+        logger.info("Image saved. 'maze_bitmap.bmp'")
+        
     else:
         logger.error("File not found!")
     

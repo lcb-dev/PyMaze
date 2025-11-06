@@ -30,7 +30,7 @@ pluggy==1.6.0
 ptyprocess==0.7.0
 pycparser==2.23
 Pygments==2.19.2
--e git+https://github.com/lcb-dev/PyMaze.git@3d2ed042b626976b2d8ad3bd836be047405152a2#egg=PyMaze
+-e git+https://github.com/lcb-dev/PyMaze.git@c2c1acd24cf2346dd467c46edb30326207e95041#egg=PyMaze
 rich==14.2.0
 SecretStorage==3.4.0
 shellingham==1.5.4
